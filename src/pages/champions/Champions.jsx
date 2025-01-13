@@ -37,7 +37,7 @@ function Champions() {
               <Link to={`/champs/${champion.id}`} key={champion.id}
                 className="hover:shadow-lg hover:shadow-black relative flex flex-col  bg-white shadow-lg overflow-hidden object-contain group"
               >
-                <div className="relative overflow-hidden w-full bg-top h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px]"> {/* Ajustar altura del contenedor */}
+                <div className="relative overflow-hidden w-full bg-top h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px]"> 
                   <img
                     src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`}
                     alt={champion.name}
