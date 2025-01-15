@@ -27,7 +27,7 @@ function Champions() {
 
 
   return (
-    <main className='min-h-screen bg-sky-900'>
+    <main className='min-h-screen bg-sky-900 py-24'>
       <Header />
       <div className='flex items-center justify-center w-full mx-auto'>
       <section className="w-full md:mx-48 min-h-screen border-y-2 my-4 mx-4 border-white p-4 grid grid-cols-2 md:grid-cols-4 gap-10">

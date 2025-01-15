@@ -18,7 +18,7 @@ const Header = () => {
   return (
 
 
-  <header className="bg-sky-950 border-b border-white font-lol font-light text-xl">
+  <header className="fixed top-0 left-0 w-full z-50 bg-sky-950 border-b border-white font-lol font-light text-xl">
     <div className="h-20 max-w-4xl mx-auto flex items-center justify-between px-4">
       <p className="font-lol font-bold text-white text-5xl">
         Loldle
