@@ -1,6 +1,7 @@
 const CHAMPIONS_API_URL = "https://ddragon.leagueoflegends.com/cdn/15.1.1/data/es_MX/champion.json";
 const CHAMPIONS_IMAGES_URL = "https://ddragon.leagueoflegends.com/cdn/img/champion/loading/"
 const CHAMPIONS_DETAILS_URL = "https://ddragon.leagueoflegends.com/cdn/15.1.1/data/es_MX/champion/"
+const SPELL_IMAGES_URL = "https://ddragon.leagueoflegends.com/cdn/15.1.1/img/spell/"
 
 export const fetchChampions = async () => {
   try {
@@ -21,6 +22,19 @@ export const fetchChampions = async () => {
 export const fetchChampionImage = async (championName) => {
   try {
     const response = await fetch(`${CHAMPIONS_IMAGES_URL}${championName}_0.jpg`);
+    if(!response.ok){
+      throw new Error(`Error al obtener la imagen del campeón :%{response.statusText}`);
+    }
+    return response;
+    
+  } catch (error) {
+    console.error("Error al obtener la imagen del campeón", error);
+    return null;
+  }
+}
+export const fecthSpellImage = async (id) => {
+  try {
+    const response = await fetch(`${SPELL_IMAGES_URL}${id}.png`);
     if(!response.ok){
       throw new Error(`Error al obtener la imagen del campeón :%{response.statusText}`);
     }

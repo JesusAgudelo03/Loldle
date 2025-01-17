@@ -4,9 +4,12 @@ import { fetchChampionData } from "../../api/champions";
 import { useEffect, useState } from "react";
 import Roles from "../../components/Roles";
 import Dificultad from "../../components/Dificultad";
+import Spells from "../../components/Spells";
 
 const ChampionDetails = () => {
   const [champ, setChamp] = useState([]);
+  const [spells, setSpells] = useState([]);
+  const [passive, setPassive] = useState(""); 
   const { id } = useParams();
 
     useEffect(() => {
@@ -15,6 +18,9 @@ const ChampionDetails = () => {
         console.log("antes",data);
         if (data){
           setChamp(data["data"][`${id}`]);
+          setSpells(data["data"][`${id}`]["spells"]);
+          setPassive(data["data"][`${id}`]["passive"]);
+
           console.log( "data en champions", data["data"])
           console.log("diff", data["data"][`${id}`]["info"])
         } else{
@@ -27,12 +33,12 @@ const ChampionDetails = () => {
 
 
   return (
-    <main className='bg-sky-900'>
+    <main className='bg-sky-900 max-w-[1920px] h-full mx-auto'>
       <Header />
-      <div  className="h-screen my-10 bg-cover bg-center" 
+      <div  className="relative  mt-10 bg-cover h-[1000px] bg-no-repeat bg-center w-full" 
         style={{backgroundImage: `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_0.jpg')`}}>
         <div
-          className="flex items-center justify-center h-full bg-gradient-to-r from-black via-black/50 to-transparent" 
+          className="h-full absolute inset-0 bg-gradient-to-r from-black via-black/50 to-transparent" 
         >
             <div className="absolute left-[185px] flex flex-col items-center justify-center text-white p-4 h-full">
               <div className="text-left flex flex-col gap-5">
@@ -88,6 +94,10 @@ const ChampionDetails = () => {
             </div>
         </div>
       </div>
+      {/* Habilidades */}
+      <section className="w-full bg-[#0A1428] h-[700px]">
+        <Spells  data={spells} passive={passive} />
+      </section>
     </main>
   );
 };
