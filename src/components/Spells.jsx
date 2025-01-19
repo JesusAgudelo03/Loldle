@@ -54,8 +54,6 @@ const Spells = ({ data, passive }) => {
               />
             ))}
           </div>
-
-
         </div>
       </div>
       <div className="flex-1 p-4 flex flex-col h-full gap-2 font-lol ">
