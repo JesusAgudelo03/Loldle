@@ -36,7 +36,7 @@ const ChampionDetails = () => {
     <main className="bg-sky-900 max-w-[1920px] h-full mx-auto">
       <Header />
       <div
-        className="relative  mt-10 bg-cover h-[1000px] bg-no-repeat bg-center w-full"
+        className="relative  bg-cover h-[1000px] bg-no-repeat bg-center w-full"
         style={{
           backgroundImage: `url('https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_0.jpg')`,
         }}
@@ -47,17 +47,17 @@ const ChampionDetails = () => {
               <h3 className="text-[#c8aa6e] font-lol text-[32px] italic font-bold uppercase">
                 {champ.title}
               </h3>
-              <h2 className="text-white font-lol font-extrabold text-7xl italic uppercase ">
+              <h2 className="text-white font-lol tracking-wide font-semibold text-7xl italic uppercase ">
                 {champ.name}
               </h2>
               <div className="max-w-[700px]">
-                <p className="font-lol font-medium text-white text-xl">
+                <p className="font-lol font-normal text-white text-lg">
                   {champ.lore}
                 </p>
               </div>
-              <div className="flex gap-4 mt-6">
-                <div className="p-2 border border-[#c8aa6e] w-fit flex flex-col gap">
-                  <div className="bg-[#0a1428]/70 py-2 px-5 flex flex-col justify-between items-center ">
+              <div className="flex gap-4 mt-6 ">
+                <div className="p-2 size-32 border border-[#c8aa6e] flex flex-col">
+                  <div className="bg-[#0a1428]/70 flex flex-col justify-between h-full p-2">
                     <Roles tags={champ.tags} />
                     <div className=" ">
                       <h3 className="text-white font-lol font-medium text-xs uppercase text-center">
@@ -69,8 +69,8 @@ const ChampionDetails = () => {
                     </div>
                   </div>
                 </div>
-                <div className="p-2 border border-[#c8aa6e] w-fit flex flex-col gap">
-                  <div className="bg-[#0a1428]/70 py-2 px-5 h-full flex flex-col justify-between items-center">
+                <div className="p-2 size-32 border border-[#c8aa6e] flex flex-col">
+                  <div className="bg-[#0a1428]/70 flex flex-col justify-between h-full p-2">
                     {champ.info?.difficulty !== undefined ? (
                       <Dificultad level={champ.info.difficulty} />
                     ) : (
